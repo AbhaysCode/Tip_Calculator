@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+
+    <EditText
+        android:id="@+id/etCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:fontFamily="monospace"
+        android:textSize="24sp"
+        android:hint="Cost of Service"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvQue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How Was the Service ?"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp"
+        android:fontFamily="monospace"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/etCost"
+        />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tipOptions"
+        android:checkedButton="@id/amazing"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvQue">
+
+        <RadioButton
+            android:id="@+id/amazing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textSize="18sp"
+            android:text="Amazing (20%)" />
+        <RadioButton
+            android:id="@+id/good"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textSize="18sp"
+            android:text="Good (18%)" />
+        <RadioButton
+            android:id="@+id/okay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textSize="18sp"
+            android:text="Okay (15%)" />
+    </RadioGroup>
+
+    <Switch
+        android:id="@+id/roundUpSwitch"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tipOptions"
+        android:textSize="20sp"
+        android:checked="true"
+        android:layout_marginTop="10dp"
+        android:fontFamily="monospace"
+        android:text="Round Up Tip ?" />
+
+    <Button
+        android:id="@+id/btnCompute"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/teal_700"
+        android:layout_marginTop="16dp"
+        android:fontFamily="monospace"
+        app:layout_constraintTop_toBottomOf="@id/roundUpSwitch"
+        android:text="Calculate Tip" />
+
+    <TextView
+        android:id="@+id/tvBill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:paddingTop="8dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnCompute"
+        tools:text="Tip Amount" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
